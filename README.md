@@ -1,4 +1,4 @@
-# training_projects
+# Tasks
 
 The first one:
 Product Manager has asked to analyze completed lessons and answer the following questions:
