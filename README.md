@@ -1,65 +1,27 @@
 # Tasks
 
-The first one:
-Product Manager has asked to analyze completed lessons and answer the following questions:
+Продакт-менеджер Василий попросил вас проанализировать завершенные уроки и ответить на следующие вопросы:
 
-How many students successfully passed only one course? (Successful completion is defined as passing the course in the exam)
+1. Сколько студентов успешно сдали только один курс? (Успешная сдача — это зачёт по курсу на экзамене) (7 баллов).
 
-Identify the most difficult and the easiest exam: find courses and exams within the course that have the lowest and highest completion rates*.
+2. Выяви самый сложный и самый простой экзамен: найди курсы и экзамены в рамках курса, которые обладают самой низкой и самой высокой завершаемостью.
 
-Determine the average time to pass exams for each subject (consider the last successful exam completion by the student).
+3. По каждому предмету определи средний срок сдачи экзаменов (под сдачей понимаем последнее успешное прохождение экзамена студентом).
 
-Identify the most popular subjects (TOP-3) based on the number of registrations. Also, identify subjects with the highest dropout rates (TOP-3).
+4. Выяви самые популярные предметы (ТОП-3) по количеству регистраций на них. А также предметы с самым большим оттоком (ТОП-3).
 
-Using pandas, identify the semester with the lowest course completion rates and the longest average completion times for courses from the beginning of 2013 to the end of 2014.
+5. Используя pandas, в период с начала 2013 по конец 2014 выяви семестр с самой низкой завершаемостью курсов и самыми долгими средними сроками сдачи курсов. 
 
-Often, for qualitative audience analysis, segmentation-based approaches are used. Using Python, build adapted RFM clusters of students to assess the audience qualitatively. In the adapted clustering, you can choose the following metrics: R - average time to pass one 
-exam, F - course completion rate, M - average score obtained in exams. Describe in detail how you created the clusters. For each RFM segment, establish boundaries for recency, frequency, and monetary metrics for interpreting these clusters. The approach description can be found here.
+6. Часто для качественного анализа аудитории использую подходы, основанные на сегментации. Используя python, построй адаптированные RFM-кластеры студентов, чтобы качественно оценить свою аудиторию. В адаптированной кластеризации можешь выбрать следующие метрики: R - среднее время сдачи одного экзамена, F - завершаемость курсов, M - среднее количество баллов, получаемое за экзамен. Подробно опиши, как ты создавал кластеры. Для каждого RFM-сегмента построй границы метрик recency, frequency и monetary для интерпретации этих кластеров.
 
-# Files:
-assessments.csv — this file contains information about test assessments. Typically, each subject in a semester includes a series of tests with grades, followed by a final exam.
+# Файлы: 
 
-code_module — subject identification code.
+assessments.csv — этот файл содержит информацию об оценках в тесте. Обычно каждый предмет в семестре включает ряд тестов с оценками, за которыми следует заключительный экзаменационный тест (экзамен).
+code_module — идентификационный код предмета.
 
-code_presentation — semester (Identification code).
+courses.csv — файл содержит список предметов по семестрам.
 
-id_assessment — test (Identification number of the assessment).
+studentAssessment.csv — этот файл содержит результаты тестов студентов. Если учащийся не отправляет работу на оценку, результат не записывается в таблицу.
+id_assessment — тест (идентификационный номер).
 
-assessment_type — type of test. There are three types of assessments: tutor-marked assessment (TMA), computer-marked assessment (CMA), course exam (Exam).
-
-date — information about the final date of the test. Calculated as the number of days from the start of the semester. The start date of the semester has the number 0 (zero).
-
-weight — test weight in % of the course grade. Exams are usually considered separately and have a weight of 100%; the sum of all other grades is 100%.
-
-сourses.csv — the file contains a list of subjects by semester.
-
-code_module — subject (identification code).
-
-code_presentation — semester (identification code).
-
-module_presentation_length — semester duration in days.
-
-
-studentAssessment.csv — this file contains students' test results. If a student does not submit an assignment for assessment, the result is not recorded in the table.
-
-id_assessment — test (identification number).
-
-id_student — student identification number.
-
-date_submitted — date of submission of the test by the student, measured as the number of days from the start of the semester.
-
-is_banked — the fact of transferring the test from the previous semester (sometimes courses are credited to students who have returned from academic leave).
-
-score — student's grade on this test. The range is from 0 to 100. A grade below 40 is a failed test.
-
-studentRegistration.csv — this file contains information about the time when a student registered for the course in the semester.
-
-code_module — subject (identification code).
-
-code_presentation — semester (identification code).
-
-id_student — student identification number.
-
-date_registration — date of student registration. This is the number of days measured from the start of the semester (for example, a negative value of -30 means that the student registered for the course 30 days before its start).
-
-date_unregistration — date of cancellation of student registration for the subject. For students who have completed the course, this field remains empty
+studentRegistration.csv — этот файл содержит информацию о времени, когда студент зарегистрировался для прохождения курса в семестре.
